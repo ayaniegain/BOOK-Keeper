@@ -23,10 +23,14 @@ function Books({ item, showFav }) {
   }
 
   return (
-    <div className="bg-white  rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 p-4 flex flex-col items-center w-64 h-[420px] mx-auto">
+    <div
+      className="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 p-4 flex flex-col items-center w-64 h-[420px] mx-auto"
+      role="listitem"
+      aria-label={`Book: ${title}`}
+    >
       <div className="flex flex-col items-center w-full">
         <div className="flex flex-wrap gap-1 mb-2">
-          {categories.length > 0 ? (
+          {categories?.length > 0 ? (
             categories.map((cat, idx) => (
               <span
                 key={idx}
@@ -43,18 +47,17 @@ function Books({ item, showFav }) {
         </div>
         <img
           src={
-            imageLinks && imageLinks.thumbnail
-              ? imageLinks.thumbnail
-              : "https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg"
+            imageLinks?.thumbnail ??
+            "https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg"
           }
           alt={title}
           className="w-32 h-44 object-cover rounded mb-3 shadow-md hover:shadow-xl transition-shadow duration-300"
         />
         <span className="font-semibold text-lg text-center mb-1">
-          {title.length > 20 ? `${title.slice(0, 20)}...` : title}
+          {title?.length > 20 ? `${title?.slice(0, 20)}...` : title}
         </span>
         <div className="flex flex-col items-center mb-2">
-          {authors.length > 0 ? (
+          {authors?.length > 0 ? (
             authors.map((author, idx) => (
               <span key={idx} className="text-sm text-gray-700">
                 {author}
@@ -65,18 +68,17 @@ function Books({ item, showFav }) {
           )}
         </div>
       </div>
-      {showFav ? (
+      {showFav && note ? (
         <div className="bg-green-600 text-white font-bold rounded px-2 py-1 my-2">
-          Note: {note && note}
+         Note: {note ?? "Note: No note"}
         </div>
-      ) : (
-        <></>
-      )}
+      ) : null}
 
       {showFav ? (
         <button
           onClick={() => handleRemoveFav(id)}
           className="mt-auto px-4 py-2 bg-orange-600 text-white rounded hover:bg-blue-700 transition"
+          aria-label={`Remove ${title} from favourites`}
         >
           Remove Favourite
         </button>
@@ -84,6 +86,7 @@ function Books({ item, showFav }) {
         <button
           onClick={() => handleSHowDetailsPage(id)}
           className="mt-auto px-4 py-2 bg-teal-800 text-white rounded hover:bg-blue-700 transition"
+          aria-label={`Show details for ${title}`}
         >
           Show Details
         </button>

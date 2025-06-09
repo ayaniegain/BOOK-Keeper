@@ -2,8 +2,8 @@ import { NavLink } from "react-router";
 
 function Navbar() {
   return (
-    <nav className="flex items-center justify-between px-4 py-3 bg-white shadow-md">
-      <NavLink to={"/"} className="text-xl font-bold text-green-600">
+    <nav className="flex items-center justify-between px-4 py-3 bg-white shadow-md" aria-label="Main navigation">
+      <NavLink to={"/"} className="text-xl font-bold text-green-600" aria-label="Go to Home">
         📕KEEP
       </NavLink>
       <div>
@@ -11,6 +11,7 @@ function Navbar() {
           <NavLink
             to={"/"}
             tabIndex={0}
+            aria-label="Home page"
             className={({ isActive }) =>
               (isActive
                 ? "text-blue-500 font-bold underline"
@@ -22,7 +23,8 @@ function Navbar() {
           </NavLink>
           <NavLink
             to={"/favourite"}
-            tabIndex={0 }
+            tabIndex={0}
+            aria-label="Favourite books page"
             className={({ isActive }) =>
               (isActive
                 ? "text-blue-500 font-bold underline"

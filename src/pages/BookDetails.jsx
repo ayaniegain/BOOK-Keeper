@@ -114,6 +114,7 @@ function BookDetails() {
                   <button
                     onMouseEnter={handleMouseEnter}
                     className="px-6 py-2 bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-md shadow-md font-semibold text-base transition-transform duration-200 hover:scale-105"
+                    aria-label="Add this book to favourites"
                   >
                     Add to Favourite
                   </button>
@@ -134,6 +135,7 @@ function BookDetails() {
                             placeholder="Add a note..."
                             rows={3}
                             className="w-full mt-1 mb-3 px-3 py-2 rounded bg-gray-800 border border-gray-700 text-gray-100 focus:outline-none focus:ring-2 focus:ring-purple-500 resize-none"
+                            aria-label="Add a note about this book"
                           />
                         </label>
                         <button

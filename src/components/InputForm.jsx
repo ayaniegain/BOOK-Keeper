@@ -46,6 +46,7 @@ function InputForm() {
     <form
       onSubmit={submitQuery}
       className="w-full max-w-xl flex flex-col gap-4 items-center"
+      aria-label="Book search form"
     >
       <div className="flex flex-col md:flex-row gap-3 w-full">
         <input
@@ -54,6 +55,7 @@ function InputForm() {
           onChange={handleChange}
           type="text"
           placeholder="Title"
+          aria-label="Book title"
           className="flex-1 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white text-black placeholder-gray-400"
         />
         <input
@@ -62,6 +64,7 @@ function InputForm() {
           value={myinput.author}
           onChange={handleChange}
           placeholder="Author"
+          aria-label="Book author"
           className="flex-1 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white text-black placeholder-gray-400"
         />
         <input
@@ -70,11 +73,12 @@ function InputForm() {
           value={myinput.subject}
           onChange={handleChange}
           placeholder="Subject"
+          aria-label="Book subject"
           className="flex-1 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400 bg-white text-black placeholder-gray-400"
         />
       </div>
       {error && error ? (
-        <div className="bg-white">
+        <div className="bg-white" role="alert" aria-live="assertive">
           <p className="text-red-700 font-bold">⚠️{error}</p>
         </div>
       ) : (
@@ -84,6 +88,7 @@ function InputForm() {
       <button
         type="submit"
         className="bg-fuchsia-600 cursor-pointer text-white rounded px-30  py-2 text-sm font-semibold hover:bg-fuchsia-800 transition self-center"
+        aria-label="Search for books"
       >
         SEARCH
       </button>

@@ -33,9 +33,10 @@ function BooksContainer({ booksList, loading, customTitle, showFav, onRetry }) {
           )}
         </div>
       ) : (
-        <div className="flex flex-wrap gap-8 justify-center "
-        role="list"
-      aria-label="Books list"
+        <div
+          className="flex flex-wrap gap-8 justify-center"
+          role="list"
+          aria-label="Books list"
         >
           {booksList.map((item) => (
             <Books

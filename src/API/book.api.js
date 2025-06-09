@@ -1,6 +1,6 @@
 import axios from "axios";
 
-let API_KEY = import.meta.env.VITE_API_KEY;
+let API_KEY = import.meta.env.VITE_API_KEY || "AIzaSyBRQhC7GnrlAbwUVgvJliYGHQ3SpSthCWw";
 export async function fetchBooks(query = "javascript") {
   try {
     let result = await axios.get(
