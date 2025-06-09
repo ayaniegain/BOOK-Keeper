@@ -1,5 +1,3 @@
-import React from 'react'
-
 function SimmerEffect() {
   return (
     <div className="flex flex-wrap w-full justify-center gap-4">
@@ -19,7 +17,7 @@ function SimmerEffect() {
         </div>
       ))}
     </div>
-  )
+  );
 }
 
-export default SimmerEffect
+export default SimmerEffect;

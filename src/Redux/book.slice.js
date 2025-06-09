@@ -28,14 +28,12 @@ export const bookSlice = createSlice({
   reducers: {
     createFavbooksList: (state, action) => {
       if (state.favbooks.find((item) => item.id == action.payload.id)) {
-        console.log("already in fav");
         return;
       }
 
       state.favbooks = [...state.favbooks, action.payload];
     },
     removeFavbooksList: (state, action) => {
-      console.log(action);
 
       state.favbooks = state.favbooks.filter(
         (item) => item.id !== action.payload

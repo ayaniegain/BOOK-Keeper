@@ -70,7 +70,7 @@ function Books({ item, showFav }) {
       </div>
       {showFav && note ? (
         <div className="bg-green-600 text-white font-bold rounded px-2 py-1 my-2">
-         Note: {note ?? "Note: No note"}
+          Note: {note ?? "Note: No note"}
         </div>
       ) : null}
 

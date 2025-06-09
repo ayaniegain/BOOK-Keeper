@@ -3,8 +3,7 @@ import { fetchBookData } from "../Redux/book.slice";
 import { useDispatch } from "react-redux";
 
 function InputForm() {
-
-  let dispatch=useDispatch()
+  let dispatch = useDispatch();
   let initial = {
     title: "",
     author: "",
@@ -20,14 +19,18 @@ function InputForm() {
     if (myinput.title || myinput.author || myinput.subject) {
       let queryParts = [];
 
-      if (myinput.title) queryParts.push(`intitle:${encodeURIComponent(myinput.title)}`);
-      if (myinput.author) queryParts.push(`inauthor:${encodeURIComponent(myinput.author)}`);
-      if (myinput.subject) queryParts.push(`insubject:${encodeURIComponent(myinput.subject)}`);
-      let searchString = queryParts.length > 0 ? queryParts.join("+") : encodeURIComponent(myinput.title);
+      if (myinput.title)
+        queryParts.push(`intitle:${encodeURIComponent(myinput.title)}`);
+      if (myinput.author)
+        queryParts.push(`inauthor:${encodeURIComponent(myinput.author)}`);
+      if (myinput.subject)
+        queryParts.push(`insubject:${encodeURIComponent(myinput.subject)}`);
+      let searchString =
+        queryParts.length > 0
+          ? queryParts.join("+")
+          : encodeURIComponent(myinput.title);
 
-      
-
-      dispatch(fetchBookData(searchString))
+      dispatch(fetchBookData(searchString));
 
       setErrror("");
     } else {

@@ -97,7 +97,6 @@ function BookDetails() {
           <div className="w-full md:w-2/3 p-10 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-4">
-                {/* Title and ID on the left */}
                 <div>
                   <h1 className="text-3xl font-bold text-purple-300 mb-1 drop-shadow">
                     {title}
@@ -109,7 +108,6 @@ function BookDetails() {
                     </h2>
                   )}
                 </div>
-                {/* Add to Favourite Button on the right */}
                 <div className="relative">
                   <button
                     onMouseEnter={handleMouseEnter}
@@ -196,7 +194,6 @@ function BookDetails() {
                 </div>
               </div>
 
-              {/* Description */}
               <div className="mb-6">
                 <h3 className="font-semibold text-purple-300 mb-2 text-lg">
                   Description:
